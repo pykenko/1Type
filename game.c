@@ -18,6 +18,7 @@ int total_score = 0;
 char global_username[20];
 int user_author = 0;
 int real_menuu = 1;
+// this code if from renko dont copy!
 #define COLOR_A FOREGROUND_RED | FOREGROUND_INTENSITY // ini merah
 #define COLOR_B FOREGROUND_GREEN | FOREGROUND_INTENSITY // hijau
 #define COLOR_C FOREGROUND_BLUE | FOREGROUND_INTENSITY // biru
@@ -132,6 +133,7 @@ void move_candy(){
 					break;
 			case '\r':
 					moved = 1;
+					// this code if from renko dont copy!
 					map[current_x][current_y] = map[playerx][playery];
 					map[playerx][playery] = temp_candy;
 					moves--;
@@ -285,6 +287,7 @@ void check_candy_explode_boom_Lline(){
 				candy_map();
 				Sleep(100);
 				total_score += 75;
+				// this code if from renko dont copy!
 				fix_candy_that_gone_gone();
 				combo_count++;
 			}
@@ -425,12 +428,13 @@ void check_candy_explode_boom_4line(){
 		}
 	}
 }
-
+// this code if from renko dont copy!
 void check_candy_explode_boom_3line(){
 	int i;int j;
 	for(i = 0;i<HEIGHT;i++){
 		for(j = 0;j<WIDTH;j++){
 			if(map[i][j] == map[i][j+1] && map[i][j] == map[i][j+2] && map[i][j] != ' ' && j <= 5){
+				// this code if from renko dont copy!
 				map[i][j] = ' ';
 				candy_map();
 				Sleep(100);
@@ -483,6 +487,7 @@ void fix_candy_that_gone_gone(){
 	char can[] = {'1','2','3','4'};
 	int i;int j;int ilovecandy;
 	for(ilovecandy = 0; ilovecandy < 10; ilovecandy++){
+		// this code if from renko dont copy!
 //		check_candy_explode_boom_5line();
 //		check_candy_explode_boom_4line();
 //		check_candy_explode_boom_3line();
@@ -601,7 +606,7 @@ void candy_loop(){
 	real_menuu = 1;
 }
 void hideCursor() {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE); // this code if from renko dont copy!
     CONSOLE_CURSOR_INFO cursorInfo;
     GetConsoleCursorInfo(hConsole, &cursorInfo);
     cursorInfo.bVisible = FALSE; // Set cursor visibility to FALSE
@@ -641,6 +646,7 @@ struct users{
 
 struct users *createUser(char username[],char password[],int score){
 	struct users *User = (struct users*)malloc(sizeof(struct users));
+	// this code if from renko dont copy!
 	User->next = NULL;
 	User->prev = NULL;
 	User->score = score;
@@ -651,7 +657,7 @@ struct users *createUser(char username[],char password[],int score){
 
 struct users *players[SIZE];
 
-
+// this code if from renko dont copy!
 int ndex(char user[]){
 	int length = strlen(user);
 	int i;int total = 0;
@@ -779,7 +785,7 @@ void logining(char name[], char password[]){
 		printf("not authorized");
 	}
 }
-
+// this code if from renko dont copy!
 //void logining(char name[], char password[]){
 //	char a[101];char b[101];
 //	char *temp = hash(password);
@@ -920,7 +926,7 @@ void print_real_menu(){
 	}
 	printf("Exit game\n");// 3
 }
-
+// this code if from renko dont copy!
 
 void real_menu(){
 	hideCursor();
@@ -985,6 +991,7 @@ void login_page(){
 	char password[21];
 	while(loginn){
 	system("cls");
+	// this code if from renko dont copy!
 	printf("Hello how are you this is my login page and i dont know what to write\n\n");
 	printf("username : <enter to start typing 'q' to go back> ");
 	char a = getch();
@@ -1004,6 +1011,7 @@ void login_page(){
 				printf("password : ");
 				scanf("%s", password);
 				if(strlen(password) < 3)printf("password must be atleast 3 characters!\n");
+				// this code if from renko dont copy!
 				if(strlen(password) > 10)printf("password cannot be more than 10 characters!\n");
 			} while(strlen(password) < 3 || strlen(password) > 10);
 			logining(username, password);
@@ -1058,6 +1066,7 @@ void register_page(){
 				printf("pick a username [5-10] : ");
 				scanf("%s", username);
 				if(strlen(username) < 5)printf("username must be atleast 5 characters!\n");
+				// this code if from renko dont copy!
 				if(strlen(username) > 10)printf("username cannot be more than 10 characters!\n");
 				if(username_taken(username) == 1){
 					printf("username taken!\n");
